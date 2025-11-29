@@ -1,0 +1,7 @@
+{
+  "name": "Copy of YuYin - AI Speech Therapist",
+  "description": "A professional-grade speech articulation assessment and training system powered by Gemini. Features real-time audio analysis, personalized correction plans, and progress tracking for speech therapy.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
