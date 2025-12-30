@@ -2,6 +2,7 @@ export enum AppView {
   DASHBOARD = 'DASHBOARD',
   ASSESSMENT = 'ASSESSMENT',
   TRAINING = 'TRAINING',
+  XIAOHONGSHU_GENERATOR = 'XIAOHONGSHU_GENERATOR',
 }
 
 export interface WordExample {
@@ -42,4 +43,48 @@ export interface TrainingPlan {
   target: string;
   exercises: TrainingExercise[];
   visualAidDescription: string;
+}
+
+export enum ContentType {
+  PROFESSIONAL = 'PROFESSIONAL',
+  PROMOTIONAL = 'PROMOTIONAL',
+}
+
+export enum ContentTopic {
+  HEARING_IMPAIRMENT = 'HEARING_IMPAIRMENT',
+  LANGUAGE_DELAY = 'LANGUAGE_DELAY',
+  ARTICULATION_DISORDER = 'ARTICULATION_DISORDER',
+  COURSE_INTRO = 'COURSE_INTRO',
+}
+
+export interface XiaohongshuContent {
+  id: string;
+  timestamp: number;
+  topic: ContentTopic;
+  type: ContentType;
+  title: string;
+  content: string;
+  hashtags: string[];
+  imagePrompts: string[];
+}
+
+export interface VideoScript {
+  id: string;
+  contentId: string;
+  script: string;
+  estimatedDuration: number;
+  sections: ScriptSection[];
+}
+
+export interface ScriptSection {
+  text: string;
+  duration: number;
+}
+
+export interface VideoExport {
+  id: string;
+  scriptId: string;
+  videoUrl: string;
+  duration: number;
+  timestamp: number;
 }

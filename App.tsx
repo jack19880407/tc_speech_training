@@ -4,6 +4,7 @@ import { APP_NAME } from './constants';
 import AssessmentModule from './components/AssessmentModule';
 import TrainingModule from './components/TrainingModule';
 import Dashboard from './components/Dashboard';
+import XiaohongshuGenerator from './components/XiaohongshuGenerator';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<AppView>(AppView.DASHBOARD);
@@ -19,6 +20,8 @@ const App: React.FC = () => {
         return <AssessmentModule onComplete={handleAssessmentComplete} />;
       case AppView.TRAINING:
         return <TrainingModule />;
+      case AppView.XIAOHONGSHU_GENERATOR:
+        return <XiaohongshuGenerator />;
       case AppView.DASHBOARD:
       default:
         return (
@@ -64,6 +67,12 @@ const App: React.FC = () => {
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentView === AppView.TRAINING ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
             >
               康复训练
+            </button>
+            <button
+              onClick={() => setCurrentView(AppView.XIAOHONGSHU_GENERATOR)}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentView === AppView.XIAOHONGSHU_GENERATOR ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
+            >
+              小红书
             </button>
           </nav>
         </div>
