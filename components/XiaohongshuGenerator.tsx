@@ -10,7 +10,7 @@ import {
   generateXiaohongshuContent, 
   convertToVideoScript,
   CONTENT_TEMPLATES 
-} from '../services/contentGeneratorService';
+} from '../services/deepseekService';
 import { synthesizeVideo } from '../services/videoSynthesisService';
 
 enum Step {
