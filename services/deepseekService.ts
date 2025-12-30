@@ -1,7 +1,7 @@
 import { XiaohongshuContent, ContentType, ContentTopic, VideoScript, ScriptSection } from "../types";
 
 const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions";
-const API_KEY = process.env.API_KEY || "";
+const API_KEY = import.meta.env.VITE_DEEPSEEK_API_KEY || "";
 const MODEL = "deepseek-chat";
 
 const TOPIC_PROMPTS = {
